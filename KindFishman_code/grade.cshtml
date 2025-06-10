@@ -1,0 +1,43 @@
+﻿@page
+@model kindFishman.Pages.gradeModel
+@{
+    ViewData["Title"] = "무게 측정기";
+}
+
+<div class="text-center">
+    <h1 class="display-4"><b>무게 측정기</b></h1>
+    <p style ="font-size: 30px;">길이, 높이, 폭을 입력하면 무게를 알려드립니다.</p>
+</div>
+
+<form method="post" class="container">
+    <div class="form-group">
+        <label for="length">
+            <img src="~/1.png" alt="Fish species" width="50" height="50">
+            <b>길이:</b></label>
+        <input type="text" class="form-control" id="length" name="Length" value="@Model.Length" />
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="height">
+            <img src="~/2.png" alt="Fish species" width="50" height="50">
+            <b>높이:</b></label>
+        <input type="text" class="form-control" id="height" name="Height" value="@Model.Height" />
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="width">
+            <img src="~/3.png" alt="Fish species" width="50" height="50">
+            <b>폭:</b></label>
+        <input type="text" class="form-control" id="width" name="Width" value="@Model.Width" />
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary btn-lg active">무게 예측하기</button>
+</form>
+<br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center">
+            <p class="fs-3"><font color="blue">kind<b>FISH</b>man</font>이 당신의 물고기의 무게를 <span class="font-weight-bold"><b><font color="red">@Model.weight.ToString("0.00")kg</font></b></span>로 예측했습니다.</p>
+        </div>
+    </div>
+</div>
